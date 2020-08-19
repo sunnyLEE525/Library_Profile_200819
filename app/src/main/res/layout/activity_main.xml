@@ -19,7 +19,7 @@
             android:id="@+id/profilePhotoImg"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/iu_pic"
             android:scaleType="centerCrop"
             app:civ_border_color="@color/white"
             app:civ_border_width="2dp"/>
