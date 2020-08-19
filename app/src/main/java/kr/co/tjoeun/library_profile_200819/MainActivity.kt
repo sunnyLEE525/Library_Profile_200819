@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
@@ -26,12 +27,14 @@ class MainActivity : BaseActivity() {
 
             val pl = object : PermissionListener {
                 override fun onPermissionGranted() {
-//                    권한이 승인된 상태일 때 실행할 코드
+//                    권한이 승인된 상태일때 실행할 코드
+
+                    //            전화(010-5555-6666)를 바로 연결 처리 (ACTION_CALL)
 
                     val myUri = Uri.parse("tel : 010-5555-6666")
                     val myIntent = Intent(Intent.ACTION_CALL, myUri)
-
                     startActivity(myIntent)
+
                 }
 
                 override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
@@ -45,6 +48,7 @@ class MainActivity : BaseActivity() {
                 .setPermissionListener(pl)
                 .setDeniedMessage("권한을 거부하면 통화가 불가능합니다. 설정 > 권한에서 허용해 주세요.")
                 .setPermissions(Manifest.permission.CALL_PHONE)
+                .check()
 
 
 //            전화를 바로 연결 처리(Action_Call)
