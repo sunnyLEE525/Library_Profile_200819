@@ -1,0 +1,19 @@
+package kr.co.tjoeun.library_profile_200819
+
+import android.os.Bundle
+
+class MainActivity : BaseActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+}
+    override fun setUpEvents() {
+
+    }
+
+    override fun setValues() {
+
+    }
+
+
+}
